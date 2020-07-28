@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Flaviana Isadora Nunes</title>
+		<script type="text/javascript">	
+			
+			function inserirLista(){
+				var texto = document.getElementById('campoTexto').value
+				
+				var li = document.createElement('li')
+				li.innerHTML = texto
+				
+				var ol = document.getElementsByTagName('ol') 
+				ol[0].appendChild(li)        
+			
+			}
+			
+			function removerLista(){
+				var ol = document.querySelector('ol')
+				var li = ol.querySelectorAll('li')
+				var ultimoIndice = li.length-1
+				ol.removeChild(li[ultimoIndice])
+				
+				if(ultimoIndice == 0){
+					var botao = document.getElementById('botaoRemover')
+					botao.setAttribute("disabled", "true")
+				}
+			}
+			
+			
+		</script>
+		<style type="text/css">
+		
+		</style>		
+	</head>
+	<body >
+		<h1>Países que já visitei</h1>
+		
+		<p>Países que já visitei</p>
+		
+		<label>No futuro, coloque mais um  país que visitou:
+			<input type="text" id="campoTexto"/>
+		</label>
+		<button type="button" onclick="inserirLista()">Enviar</button>
+		<button type="button" onclick="removerLista()" id="botaoRemover">Remover</button>	
+		
+		
+		<ol>
+			<li>Portugal</li>
+			<li>Argentina</li>
+			<li>Canadá</li>
+			<li>Tailândia</li>
+			<li>Chile</li>
+			<li>EUA</li>
+		<ol>
+		
+		
+	</body>
+</html>
